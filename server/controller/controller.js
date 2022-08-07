@@ -20,8 +20,8 @@ exports.create = (req, res) => {
   user
     .save(user)
     .then((data) => {
-      res.send(data);
-      //   res.redirect("/add-user");
+      // res.send(data);
+      res.redirect("/");
     })
     .catch((err) => {
       res.status(500).send({
@@ -40,11 +40,9 @@ exports.find = (req, res) => {
     Userdb.findById(id)
       .then((data) => {
         if (!data) {
-          res
-            .status(404)
-            .send({
-              message: `Cannot find user with ${id}. Maybe id is wrong!`,
-            });
+          res.status(404).send({
+            message: `Cannot find user with ${id}. Maybe id is wrong!`,
+          });
         } else {
           res.send(data);
         }
