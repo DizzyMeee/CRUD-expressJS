@@ -10,10 +10,14 @@
       href="/update-user?id=<%= users[i]._id%>"
       class="btn border-shadow update"
     >
-      <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+      <span class="edit-gradient"><i class="fas fa-pencil-alt"></i></span>
     </a>
-    <a class="btn border-shadow delete" data-id="<%= users[i]._id%>">
-      <span class="text-gradient"><i class="fa-solid fa-trash-can"></i></span>
+    <a
+      class="btn border-shadow delete"
+      data-id="<%= users[i]._id%>"
+      style="cursor: pointer"
+    >
+      <span class="delete-gradient"><i class="fa-solid fa-trash-can"></i></span>
     </a>
   </td>
 </tr>

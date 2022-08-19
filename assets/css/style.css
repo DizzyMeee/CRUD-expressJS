@@ -59,17 +59,33 @@ a {
   color: var(--light);
 }
 
-.text-gradient {
-  background: linear-gradient(to right, #8e2de2, #4a00e0);
+.add-gradient {
+  background: linear-gradient(to right, #0077b6, #00b4d8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.edit-gradient {
+  background: linear-gradient(to right, #ffb700, #ffc300);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.delete-gradient {
+  background: linear-gradient(to right, #ba181b, #e5383b);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 #header nav {
-  background-color: #1a2a66;
+  background-color: #03045e;
   padding: 1em 0;
   width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 #site-main {
@@ -105,9 +121,9 @@ table {
   margin: 0 0.2em;
 }
 
-.table tr:hover {
+/* .table tr:hover {
   background-color: #06d6a0;
-}
+} */
 
 .table tr:hover td > a {
   box-shadow: none;
@@ -224,7 +240,7 @@ table {
 #add_user .form-group .btn {
   width: 100%;
   padding: 0.9em 1em;
-  background-color: #16db93;
+  background-color: #f0eff4;
   border: none;
   font-family: "PT Sans", sans-serif;
   font-size: 1em;
@@ -235,6 +251,6 @@ table {
 
 #update_user .form-group .btn:hover,
 #add_user .form-group .btn:hover {
-  background-color: var(--dark);
-  color: var(--border);
+  background-color: #16db93;
+  color: var(--dark);
 }
