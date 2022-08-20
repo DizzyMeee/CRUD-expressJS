@@ -32,6 +32,11 @@ app.use("/js", express.static(path.resolve(__dirname, "assets/js")));
 // load routers
 app.use("/", require("./server/routes/router"));
 
+// catch 404 page
+app.use(function (req, res, next) {
+  res.status(404).render("404");
+});
+
 app.listen(PORT, () => {
   console.log(`listening on port http://localhost:${PORT}`);
 });
