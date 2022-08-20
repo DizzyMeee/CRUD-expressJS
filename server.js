@@ -14,8 +14,16 @@ const PORT = process.env.PORT || 8080;
 // log requests to the console
 app.use(morgan("tiny"));
 
-// mongodb connection
-connectDB();
+const start = async () => {
+  // mongodb connection
+  await connectDB();
+
+  app.listen(PORT, () => {
+    console.log(`listening on port http://localhost:${PORT}`);
+  });
+};
+
+start();
 
 // parse request to body-parser
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -35,8 +43,4 @@ app.use("/", require("./server/routes/router"));
 // catch 404 page
 app.use(function (req, res, next) {
   res.status(404).render("404");
-});
-
-app.listen(PORT, () => {
-  console.log(`listening on port http://localhost:${PORT}`);
 });
